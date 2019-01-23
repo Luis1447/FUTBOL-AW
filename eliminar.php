@@ -105,8 +105,12 @@
 						}else{
 							$web="<a target='_blank' href='".$row["web"]."'>".$row["web"]."</a>";
 						}
-						echo "<tr><th scope='row'>".$row["codi"]."</th><td>".$row["nom"]."</td><td>".$web."</td><td>".$row["localitat"]."</td><td><img heigth='auto' width='50px' src='".$row["escut"]."'/></td></tr>";
-					}
+						if($row["escut"]==null) {
+							$escut="no hay imagen";
+						}else{
+							$escut="<img heigth='auto' width='50px' src='".$row["escut"]."'>";
+						}
+						echo "<tr><th scope='row'>".$row["codi"]."</th><td>".$row["nom"]."</td><td>".$web."</td><td>".$row["localitat"]."</td><td>".$escut."</td></tr>";					}
 				} else {
 					echo "<tr><th scope='row'>0</th><td>S/N</td><td>S/N</td><td>S/N</td></tr>";
 				}
